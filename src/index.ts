@@ -14,7 +14,7 @@ export class SPIDev {
         }
     }
 
-    public transfer(size: number, data: Uint8Array, settings: Partial<TransferSettings> = {}) {
+    public transfer(size: number, data: Uint8Array = Uint8Array.from([]), settings: Partial<TransferSettings> = {}) {
         const { bits_per_word = 0, delay_usecs = 0, cs_change = 0, speed_hz = 0 } = settings
 
         const output = spiDevNode.spi_transfer(this.fd, size, data, bits_per_word, delay_usecs, cs_change, speed_hz)

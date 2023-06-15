@@ -21,8 +21,8 @@ export class NRF905 {
         this.gpio = new GPIOController(chipname, 'nRF905')
 
         this.PWR_UP = this.gpio.requestLineAsOutput(pins.PWR_UP, 0)
-        this.TRX_CE = this.gpio.requestLineAsOutput(pins.TRX_CE, 1)
-        this.TX_EN = this.gpio.requestLineAsOutput(pins.TX_EN, 1)
+        this.TRX_CE = this.gpio.requestLineAsOutput(pins.TRX_CE, 0)
+        this.TX_EN = this.gpio.requestLineAsOutput(pins.TX_EN, 0)
         this.CSN = this.gpio.requestLineAsOutput(pins.CSN, 1)
 
         this.CD = this.gpio.requestLineEvents(pins.CD, 'rising', 10)
@@ -37,11 +37,17 @@ export class NRF905 {
             SPI_MODE: 0,
         })
 
-        console.log(this.spidev.getConfiguration())
-
-        this.CSN.setValue(0)
-        console.log('recvd: ', this.spidev.transfer(11, Uint8Array.from([0x10])))
-        this.CSN.setValue(1)
+        setInterval(() => {
+            this.CSN.setValue(0)
+            setTimeout(() => {
+                const config = this.spidev.transfer(11, Uint8Array.from([0x10]), {
+                    speed_hz: 1000000
+                })
+                console.log('nRF905 configuration: ', config)
+                this.CSN.setValue(1)    
+            }, 10)
+    
+        }, 1000)
     }
 
     public release(): void {
