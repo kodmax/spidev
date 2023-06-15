@@ -40,7 +40,7 @@ export class NRF905 {
         console.log(this.spidev.getConfiguration())
 
         this.CSN.setValue(0)
-        console.log('recvd: ', this.spidev.transfer(11, Uint8Array.from([0x10, 1, 0xff, 4, 64])))
+        console.log('recvd: ', this.spidev.transfer(11, Uint8Array.from([0x10])))
         this.CSN.setValue(1)
     }
 
