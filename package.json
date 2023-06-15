@@ -1,9 +1,9 @@
 {
   "dependencies": {
-    "bindings": "^1.5.0",
-    "gpiod-client": "^1.2.0"
+    "bindings": "^1.5.0"
   },
   "devDependencies": {
+    "gpiod-client": "^1.2.0",
     "node-api-headers": "^1.0.1",
     "@types/node": "^20.3.1",
     "nan": "^2.17.0"
@@ -12,7 +12,7 @@
     "install": "node-gyp rebuild"
   },
   "gypfile": true,
-  "name": "spidev",
+  "name": "spi-dev",
   "version": "1.0.0",
   "description": "SPI devices communication support for Node.js",
   "main": "dist/index.js",
