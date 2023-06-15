@@ -1,0 +1,36 @@
+{
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "gpiod-client": "^1.2.0"
+  },
+  "devDependencies": {
+    "node-api-headers": "^1.0.1",
+    "@types/node": "^20.3.1",
+    "nan": "^2.17.0"
+  },
+  "scripts": {
+    "install": "node-gyp rebuild"
+  },
+  "gypfile": true,
+  "name": "spidev",
+  "version": "1.0.0",
+  "description": "SPI devices communication support for Node.js",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kodmax/spidev.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kodmax/spidev/issues"
+  },
+  "homepage": "https://github.com/kodmax/spidev",
+  "keywords": [
+    "spi",
+    "spidev",
+    "gpio",
+    "raspberry",
+    "pi"
+  ],
+  "author": "Marcin Malinowski",
+  "license": "GPL-3.0-or-later"
+}
