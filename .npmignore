@@ -8,5 +8,4 @@ jest.config.js
 build
 .vscode
 examples
-LICENSE
 /index.ts

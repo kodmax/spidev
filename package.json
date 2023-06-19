@@ -13,7 +13,7 @@
   },
   "gypfile": true,
   "name": "spi-dev",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "SPI devices communication support for Node.js",
   "main": "dist/index.js",
   "repository": {
@@ -31,6 +31,5 @@
     "raspberry",
     "pi"
   ],
-  "author": "Marcin Malinowski",
-  "license": "GPL-3.0-or-later"
+  "author": "Marcin Malinowski"
 }
