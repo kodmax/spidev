@@ -1,7 +1,9 @@
-import { closeSync, openSync } from "fs"
+import { closeSync, openSync } from 'fs'
 
-import { SPIConfiguration, TransferSettings, decode, encode } from "./spi-config"
-import { spiDevNode } from "./spidev"
+import { SPIConfiguration, TransferSettings } from './config'
+import { spiDevNode } from './spidev'
+import { encode } from './config/encode'
+import { decode } from './config/decode'
 
 export class SPIDev {
     private readonly fd: number

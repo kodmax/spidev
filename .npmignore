@@ -9,3 +9,6 @@ build
 .vscode
 examples
 /index.ts
+/docs
+DS_Store
+/src

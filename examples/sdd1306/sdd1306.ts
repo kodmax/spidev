@@ -1,7 +1,7 @@
-import { GPIOController } from "gpiod-client"
-import { Pins } from "./pins"
-import { GPIOOutputLine } from "gpiod-client/dist/src/gpio-output-line"
-import { SPIDev } from "../../src"
+import { GPIOController } from 'gpiod-client'
+import { Pins } from './pins'
+import { GPIOOutputLine } from 'gpiod-client/dist/src/gpio-output-line'
+import { SPIDev } from '../../src'
 
 export class SDD1306 {
     private readonly gpio: GPIOController
@@ -23,7 +23,7 @@ export class SDD1306 {
             SPI_LSB_FIRST: false,
             BITS_PER_WORD: 8,
             SPI_NO_CS: true,
-            SPI_MODE: 0,
+            SPI_MODE: 0
         })
 
         this.RES.trigger(0, 1000)
@@ -40,7 +40,7 @@ export class SDD1306 {
         this.setCOMPinsHardwareConfiguration(0x12)
         this.setVCOMHDeselectLevel(0x40)
         this.setChargePump(0x14)
-        
+
         this.setDisplayOn()
     }
 
